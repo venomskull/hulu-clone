@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
+import Nav from '../components/Nav'
+import Results from '../components/Results'
 
 
 export default function Home() {
@@ -12,18 +14,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Lets build hulu-clone</h1>
+      {/* <h1>Lets build hulu-clone</h1> */}
 
       {/* Header */}
-        <Header />
+      <Header />
 
       {/* Navbar */}
-
+      <Nav />
 
       {/* Results */}
-
+      <Results />
 
 
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const genre = context.query.genre;
 }
